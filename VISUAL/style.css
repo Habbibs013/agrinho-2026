@@ -1,214 +1,512 @@
-@import url("style/header.css");
-
-/* 1. VARIÁVEIS DE AMBIENTE (Tema Padrão) */
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
 :root {
-    --laranja-claro: #FF862A;
-    --preto: #000000;
-    --branco: #FFFFFF; 
-    --verde-header: #4d805d;
-    --verde-gradiente-inicio: #64c095;
-    --verde-gradiente-fim: #2c744a;
+    --cor-primaria: #2d6a4f;       /* Verde escuro principal */
+    --cor-secundaria: #40916c;     /* Verde médio para destaques */
+    --cor-acento: #52b788;         /* Verde claro/vivo */
+    --cor-fundo-claro: #ffffff;    /* Fundo padrão */
+    --cor-fundo-alt: #f4f9f4;      /* Fundo alternado suave */
+    --cor-texto: #2d3748;          /* Grafite escuro para leitura */
+    --cor-texto-suave: #718096;    /* Cinza para subtítulos */
     --transicao: all 0.3s ease;
+    --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --sombra-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* 2. RESET GLOBAL */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que o padding não quebre o tamanho dos elementos */
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--branco);
-    color: #333333;
-    overflow-x: hidden;
-    transition: var(--transicao);
-}
-
-/* 3. CABEÇALHO */
-.cabecalho {
-    background-color: var(--verde-header);
-    color: var(--branco);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cabecalho-imagem {
-    width: 15%;
-    max-width: 120px; /* Limita o tamanho em telas grandes */
-    height: auto;
-}
-
-.cabecalho-lista-item {
-    display: inline-block;
-    margin: 0 15px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transicao);
-}
-
-.cabecalho-lista-item:hover {
-    color: var(--laranja-claro);
-}
-
-/* 4. SEÇÕES PRINCIPAIS (AGRO & CONTATO) */
-.agro, .contato {
-    background-image: linear-gradient(135deg, var(--verde-gradiente-inicio), var(--verde-gradiente-fim));
-    color: var(--branco);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px; /* Espaçamento ideal entre texto e imagem */
-    padding: 60px 20px;
-    flex-wrap: wrap; /* Faz os elementos quebrarem linha no celular */
-}
-
-.agro-div-conteudo {
-    width: 45%;
-    min-width: 300px; /* Evita que o texto fique espremido */
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto);
     line-height: 1.6;
 }
 
-.agro-titulo {
-    font-size: 2rem;
-    padding-bottom: 20px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 25px;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.agro-imagem {
-    width: 30%;
-    min-width: 250px;
-    border-radius: 12px; /* Cantos arredondados modernos */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+a {
+    text-decoration: none;
+    color: inherit;
     transition: var(--transicao);
 }
 
-.agro-imagem:hover {
-    transform: scale(1.03); /* Efeito sutil de zoom ao passar o mouse */
-}
-
-/* 5. RODAPÉ */
-.rodape {
-    background-color: var(--preto);
-    padding: 20px;
-    text-align: center;
-}
-
-.rodape-imagem {
-    height: 60px;
-    width: auto;
-}
-
-/* 6. ACESSIBILIDADE & BOTÕES */
-.menu-acessibilidade {
-    position: fixed;
-    top: 2rem;
-    right: 20px;
+/* ==========================================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+.cabecalho {
+    background-color: var(--cor-fundo-claro);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-#botao-acessibilidade {
-    background-color: var(--laranja-claro);
-    color: var(--preto);
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
+.cabecalho-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cabecalho-imagem {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.logo-area h1 {
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.logo-area p {
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+}
+
+.cabecalho-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.cabecalho-menu a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 5px 10px;
     border-radius: 4px;
+}
+
+.cabecalho-menu a:hover {
+    color: var(--cor-primaria);
+    background-color: var(--cor-fundo-alt);
+}
+
+/* Acessibilidade */
+.menu-acessibilidade {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.btn-acessibilidade {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
     transition: var(--transicao);
 }
 
-#botao-acessibilidade:hover {
-    filter: brightness(1.1);
-}
-
-.rotacao-botao {
-    transform: rotate(-90deg);
-    transform-origin: right center;
+.btn-acessibilidade:hover {
+    background-color: var(--cor-secundaria);
 }
 
 .opcoes-acessibilidade {
-    margin-top: 10px;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: white;
+    box-shadow: var(--sombra-hover);
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    gap: 5px;
+    z-index: 10;
 }
 
 .opcoes-acessibilidade button {
-    background-color: var(--branco);
-    color: var(--preto);
-    border: 2px solid var(--verde-header);
-    padding: 8px 12px;
-    font-weight: bold;
+    background-color: var(--cor-fundo-alt);
+    border: 1px solid #cbd5e0;
+    padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: 600;
     transition: var(--transicao);
 }
 
 .opcoes-acessibilidade button:hover {
-    background-color: var(--verde-header);
-    color: var(--branco);
+    background-color: var(--cor-acento);
+    color: white;
 }
 
-/* Classe controlada pelo JavaScript para exibir/esconder o menu */
-.apresenta-lista {
+.esconde-lista {
     display: none !important;
 }
 
-/* 7. REGRAS PARA ALTO CONTRASTE */
-.alto-contraste {
-    background-color: var(--preto) !important;
-    color: var(--branco) !important;
+/* ==========================================================================
+   3. SEÇÕES PRINCIPAIS E GRID
+   ========================================================================== */
+.conteudo-principal {
+    display: block;
 }
 
-.alto-contraste .cabecalho,
-.alto-contraste .rodape,
-.alto-contraste .agro,
-.alto-contraste .contato {
-    background-color: var(--preto) !important;
-    background-image: none !important; /* Remove o gradiente */
-    color: var(--branco) !important;
-    border: 1px solid var(--branco);
+.agro-section {
+    padding: 80px 20px;
 }
 
-.alto-contraste .cabecalho-lista-item:hover {
-    color: var(--laranja-claro) !important;
+.alt-bg {
+    background-color: var(--cor-fundo-alt);
 }
 
-.alto-contraste .botao-inicio,
-.alto-contraste .btn-primary,
-.alto-contraste .opcoes-acessibilidade button {
-    background-color: var(--laranja-claro) !important;
-    color: var(--preto) !important;
-    border: 2px solid var(--branco) !important;
+.container-central {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* 8. RESPONSIVIDADE (Telas menores/Celulares) */
-@media (max-width: 768px) {
-    .cabecalho {
+.alinhamento-centro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.subtitulo {
+    color: var(--cor-texto-suave);
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Grid Lado a Lado (Imagens e Textos) */
+.agro-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+.agro-conteudo {
+    flex: 1;
+}
+
+.agro-imagem-wrapper {
+    flex: 1;
+    width: 100%;
+}
+
+.agro-imagem {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    object-fit: cover;
+}
+
+/* Elementos de Texto Internos */
+.tag {
+    display: inline-block;
+    background-color: #d8f3dc;
+    color: var(--cor-primaria);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.agro-titulo {
+    font-size: 2.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.agro-conteudo p {
+    margin-bottom: 15px;
+    color: var(--cor-texto);
+}
+
+/* Benefícios Rápidos (Seção 1) */
+.beneficios-rapidos {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.beneficio-item {
+    background-color: var(--cor-fundo-fundo, #f9f9f9);
+    padding: 12px 16px;
+    border-left: 4px solid var(--cor-acento);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Lista de Passos (Seção 2) */
+.lista-passos {
+    list-style: none;
+    counter-reset: passos-counter;
+    margin-top: 25px;
+}
+
+.lista-passos li {
+    counter-increment: passos-counter;
+    position: relative;
+    padding-left: 55px;
+    margin-bottom: 25px;
+}
+
+.lista-passos li::before {
+    content: counter(passos-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--cor-primaria);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.lista-passos li strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+    margin-bottom: 4px;
+}
+
+.nota-produtor {
+    background-color: #e8f5e9;
+    border-left: 4px solid var(--cor-primaria);
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.nota-produtor strong {
+    display: block;
+    font-style: normal;
+    color: var(--cor-primaria);
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   4. CARDS DE VANTAGENS (SEÇÃO 3)
+   ========================================================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--cor-fundo-claro);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+    border: 1px solid #edf2f7;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--cor-acento);
+}
+
+.card-icone {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--cor-texto-suave);
+}
+
+/* ==========================================================================
+   5. EQUIPE / ESTUDANTES (SEÇÃO 4)
+   ========================================================================== */
+.estudante-todos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.estudante-card {
+    background-color: var(--cor-fundo-claro);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+    transition: var(--transicao);
+}
+
+.estudante-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+}
+
+.avatar-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px auto;
+    border: 4px solid var(--cor-fundo-alt);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.estudante-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.estudante-nome {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 4px;
+}
+
+.estudante-cargo {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 15px;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icone-social img {
+    width: 24px;
+    height: 24px;
+    transition: var(--transicao);
+    opacity: 0.7;
+}
+
+.icone-social:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   6. RODAPÉ
+   ========================================================================== */
+.rodape {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   7. DESIGN RESPONSIVO (MEDIA QUERIES)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .agro-grid {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .agro-grid.invertido {
+        flex-direction: row-reverse;
+    }
+    
+    .agro-titulo {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecalho-container {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
     }
-    .cabecalho-imagem {
-        width: 40%;
-    }
-    .agro-div-conteudo {
+    
+    .cabecalho-menu {
         width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
     }
-    .agro-imagem {
-        width: 80%;
+    
+    .agro-section {
+        padding: 50px 15px;
     }
-    .menu-acessibilidade {
-        top: auto;
-        bottom: 20px; /* Move o botão para baixo no celular para não cobrir o topo */
-        right: 10px;
+
+    .agro-titulo {
+        font-size: 1.8rem;
     }
+}
+
+/* Opcional: Classe auxiliar global para Alto Contraste (Injetada via JS) */
+body.alto-contraste {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+body.alto-contraste .cabecalho, 
+body.alto-contraste .card,
+body.alto-contraste .estudante-card,
+body.alto-contraste .alt-bg {
+    background-color: #121212 !important;
+    border-color: #ffffff !important;
+}
+body.alto-contraste a, 
+body.white-text,
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste p,
+body.alto-contraste strong {
+    color: #ffffff !important;
+}
+body.alto-contraste .tag {
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }

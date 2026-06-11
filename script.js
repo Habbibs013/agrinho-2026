@@ -3,38 +3,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
 
     botaoDeAcessibilidade.addEventListener('click', function () {
-        // Remove a classe que esconde (mostrando o menu) ou adiciona de volta (escondendo)
+        // CORREÇÃO: Alterna a classe correta definida no CSS para exibir/esconder
         opcoesDeAcessibilidade.classList.toggle('esconde-lista');
-        
-        // Ativa a animação de rotação no ícone de engrenagem
         botaoDeAcessibilidade.classList.toggle('rotacao-botao');
 
-        // Atualiza a acessibilidade para leitores de tela (Aria-Expanded)
-        const estaExpandido = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
-        botaoDeAcessibilidade.setAttribute('aria-expanded', !estaExpandido);
+        const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
+        botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado);
     });
     
     const aumentaFonteBotao = document.getElementById('aumentar-fonte');
     const diminuiFonteBotao = document.getElementById('diminuir-fonte');
     const alternaContraste = document.getElementById('alterna-contraste');
 
-    let tamanhoAtualFonte = 1; // 1rem
+    // CORREÇÃO: Partimos dos 16px base que foram definidos no seu 'html {}' do CSS
+    let tamanhoAtualFonte = 16; 
 
     aumentaFonteBotao.addEventListener('click', function () {
-        if (tamanhoAtualFonte < 1.5) { // Limite máximo para não quebrar o layout
-            tamanhoAtualFonte += 0.1;
-            document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
+        if (tamanhoAtualFonte < 24) { // Limite máximo para não quebrar o layout (24px)
+            tamanhoAtualFonte += 2;
+            // Modifica o 'html' para que todas as unidades 'rem' mudem juntas proporcionalmente
+            document.documentElement.style.fontSize = `${tamanhoAtualFonte}px`;
         }
     });
 
     diminuiFonteBotao.addEventListener('click', function () {
-        if (tamanhoAtualFonte > 0.8) { // Limite mínimo para manter legível
-            tamanhoAtualFonte -= 0.1;
-            document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
+        if (tamanhoAtualFonte > 12) { // Limite mínimo para manter legível (12px)
+            tamanhoAtualFonte -= 2;
+            document.documentElement.style.fontSize = `${tamanhoAtualFonte}px`;
         }
     });
 
     alternaContraste.addEventListener('click', function () {
+         // Ativa o seletor 'body.alto-contraste' que configuramos no CSS
          document.body.classList.toggle('alto-contraste');
     });
 });

@@ -1,117 +1,214 @@
 @import url("style/header.css");
-:root{
- --laranja-claro: #FF862A;
+
+/* 1. VARIÁVEIS DE AMBIENTE (Tema Padrão) */
+:root {
+    --laranja-claro: #FF862A;
     --preto: #000000;
     --branco: #FFFFFF; 
+    --verde-header: #4d805d;
+    --verde-gradiente-inicio: #64c095;
+    --verde-gradiente-fim: #2c744a;
+    --transicao: all 0.3s ease;
 }
 
+/* 2. RESET GLOBAL */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Garante que o padding não quebre o tamanho dos elementos */
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--branco);
+    color: #333333;
+    overflow-x: hidden;
+    transition: var(--transicao);
+}
+
+/* 3. CABEÇALHO */
 .cabecalho {
-    background-color: #4d805d;
-    color:var(--branco);
+    background-color: var(--verde-header);
+    color: var(--branco);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.cabecalho-imagem{
+.cabecalho-imagem {
     width: 15%;
-    margin: 0 10px;
+    max-width: 120px; /* Limita o tamanho em telas grandes */
+    height: auto;
 }
 
-.cabecalho-lista-item{
+.cabecalho-lista-item {
     display: inline-block;
-    margin: 0 10px;
-    font-size: 24px;
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transicao);
 }
 
-.agro-imagem{
-    width: 25%;
-    margin: 10px;
+.cabecalho-lista-item:hover {
+    color: var(--laranja-claro);
 }
 
-.agro{
-    background-image: linear-gradient(#64c095,#2c744a);
-    color:var(--branco);
+/* 4. SEÇÕES PRINCIPAIS (AGRO & CONTATO) */
+.agro, .contato {
+    background-image: linear-gradient(135deg, var(--verde-gradiente-inicio), var(--verde-gradiente-fim));
+    color: var(--branco);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px 0;
+    gap: 40px; /* Espaçamento ideal entre texto e imagem */
+    padding: 60px 20px;
+    flex-wrap: wrap; /* Faz os elementos quebrarem linha no celular */
 }
 
-.agro-div-conteudo{
-    width: 35%;
-    padding: 14px 0;
-    margin: 10px;
-}
-.agro-titulo{
-    padding: 24px 0;
-}
-.contato{
-  background-image: linear-gradient(#64c095,#2c744a);
-    color:var(--branco);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 14px 0;
+.agro-div-conteudo {
+    width: 45%;
+    min-width: 300px; /* Evita que o texto fique espremido */
+    line-height: 1.6;
 }
 
-.rodape{
-    background-color:var(--preto);
+.agro-titulo {
+    font-size: 2rem;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 25px;
+}
+
+.agro-imagem {
+    width: 30%;
+    min-width: 250px;
+    border-radius: 12px; /* Cantos arredondados modernos */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: var(--transicao);
+}
+
+.agro-imagem:hover {
+    transform: scale(1.03); /* Efeito sutil de zoom ao passar o mouse */
+}
+
+/* 5. RODAPÉ */
+.rodape {
+    background-color: var(--preto);
+    padding: 20px;
     text-align: center;
 }
 
-.rodape-imagem{
+.rodape-imagem {
     height: 60px;
-    padding: 12px 0;
-   
+    width: auto;
 }
 
-
-.menu-acessibilidade{
+/* 6. ACESSIBILIDADE & BOTÕES */
+.menu-acessibilidade {
     position: fixed;
-    top:2rem;
-    right:20px;
+    top: 2rem;
+    right: 20px;
     z-index: 1000;
 }
 
-.rotacao-botao{
+#botao-acessibilidade {
+    background-color: var(--laranja-claro);
+    color: var(--preto);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: var(--transicao);
+}
+
+#botao-acessibilidade:hover {
+    filter: brightness(1.1);
+}
+
+.rotacao-botao {
     transform: rotate(-90deg);
     transform-origin: right center;
 }
 
-.opcoes-acessibilidade{
-    margin-top:10px;
+.opcoes-acessibilidade {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
-.opcoes-acessibilidade button{
-    margin-bottom: 5px;
+.opcoes-acessibilidade button {
+    background-color: var(--branco);
+    color: var(--preto);
+    border: 2px solid var(--verde-header);
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transicao);
 }
 
-.apresenta-lista{
-    display: none;
-}
-
-.alto-contraste {
-    background-color: var(--preto);
+.opcoes-acessibilidade button:hover {
+    background-color: var(--verde-header);
     color: var(--branco);
+}
+
+/* Classe controlada pelo JavaScript para exibir/esconder o menu */
+.apresenta-lista {
+    display: none !important;
+}
+
+/* 7. REGRAS PARA ALTO CONTRASTE */
+.alto-contraste {
+    background-color: var(--preto) !important;
+    color: var(--branco) !important;
 }
 
 .alto-contraste .cabecalho,
 .alto-contraste .rodape,
-.alto-contraste .agro {
-    background-color: var(--preto);
-    color: var(--branco);
+.alto-contraste .agro,
+.alto-contraste .contato {
+    background-color: var(--preto) !important;
+    background-image: none !important; /* Remove o gradiente */
+    color: var(--branco) !important;
+    border: 1px solid var(--branco);
 }
+
+.alto-contraste .cabecalho-lista-item:hover {
+    color: var(--laranja-claro) !important;
+}
+
 .alto-contraste .botao-inicio,
-.alto-contraste .btn-primary {
-    background-color: var(--laranja-claro);
-    color: var(--preto);
+.alto-contraste .btn-primary,
+.alto-contraste .opcoes-acessibilidade button {
+    background-color: var(--laranja-claro) !important;
+    color: var(--preto) !important;
+    border: 2px solid var(--branco) !important;
+}
+
+/* 8. RESPONSIVIDADE (Telas menores/Celulares) */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .cabecalho-imagem {
+        width: 40%;
+    }
+    .agro-div-conteudo {
+        width: 100%;
+    }
+    .agro-imagem {
+        width: 80%;
+    }
+    .menu-acessibilidade {
+        top: auto;
+        bottom: 20px; /* Move o botão para baixo no celular para não cobrir o topo */
+        right: 10px;
+    }
 }

@@ -5,134 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="VISUAL/style.css">
-    <title>Criação de alimentos de forma sustentavel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Criação de Alimentos de Forma Sustentável</title>
 </head>
 <body>
     <header class="cabecalho">
-        <img class="cabecalho-imagem" src="c" alt="logo referente ao tema proposto">
-        <ul>
-            <li class="cabecalho-lista-item">Criação de alimentos de forma sustentavel</li>
-            <li class="cabecalho-lista-item">Unificação da criação de peixes e porcos</li>
-        </ul>
-    
-     <div id="acessibilidade" class="menu-acessibilidade" >
-            <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao">Acessibilidade</button>
-            <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista ">
-                <button  id="aumentar-fonte" class="btn btn-primary fw-bold">A+</button>
-                <button  id="diminuir-fonte" class="btn btn-primary fw-bold">A-</button>
-                <button  id="alterna-contraste" class="btn btn-primary fw-bold" >Alto contraste</button>
+        <div class="cabecalho-container">
+            <div class="logo-area">
+                <img class="cabecalho-imagem" src="logo.png" alt="Logo Sustentabilidade">
+                <div>
+                    <h1>EcoAgro</h1>
+                    <p>Sustentabilidade Integrada</p>
+                </div>
+            </div>
+            <nav>
+                <ul class="cabecalho-menu">
+                    <li><a href="#projeto">O Projeto</a></li>
+                    <li><a href="#funcionamento">Como Funciona</a></li>
+                    <li><a href="#vantagens">Vantagens</a></li>
+                    <li><a href="#equipe">Equipe</a></li>
+                </ul>
+            </nav>
+            <div id="acessibilidade" class="menu-acessibilidade">
+                <button id="botao-acessibilidade" class="btn-acessibilidade">Acessibilidade ⚙️</button>
+                <div id="opcoes-acessibilidade" class="opcoes-acessibilidade esconde-lista">
+                    <button id="aumentar-fonte" title="Aumentar Fonte">A+</button>
+                    <button id="diminuir-fonte" title="Diminuir Fonte">A-</button>
+                    <button id="alterna-contraste" title="Alto Contraste">◐ Contraste</button>
+                </div>
             </div>
         </div>
-  </header>
-    <section class="agro">
-        <div class="agro-div-conteudo">
-            <h2 class="agro-titulo">Chiqueiro Sustentável:</h2>
-            <p class="agro-texto-um">A engenharia da nossa granja foi projetada para alinhar alta produtividade ao menor impacto ambiental possível. A estrutura principal é construída utilizando materiais sustentáveis, como madeira de reflorestamento tratado e coberturas que priorizam o isolamento térmico passivo, reduzindo a necessidade de ventilação artificial constante.</p>
-            <p class="agro-texto-dois">Para garantir a nossa autossuficiência, o telhado conta com um sistema de painéis solares fotovoltaicos, responsáveis por gerar toda a energia limpa necessária para o funcionamento das bombas de água, iluminação e automação do trato. O grande diferencial do manejo interno é o uso do piso ripado (vazado). Essa tecnologia traz três grandes benefícios práticos: </p>
-            <p class="agro-texto-tres">Higiene e Bem-estar: Os porcos não ficam em contato direto com a sujeira, o que reduz drasticamente a proliferação de doenças e o estresse animal.</p>
-            <p class="agro-texto-quatro">Economia Hídrica: A limpeza se torna muito mais rápida e exige uma quantidade significativamente menor de água em comparação às baias de piso comum.</p>
-            <p class="agro-texto-cinco">Coleta Eficiente: Os dejetos passam pelas frestas e são direcionados imediatamente para as canaletas subterrâneas, evitando o acúmulo de gases nocivos (como a amônia) dentro do galpão e garantindo o fluxo contínuo de nutrientes para a etapa seguinte do projeto.</p>
-        </div>
-        <img class="agro-imagem" src="VISUAL/imagens/chiqueiro.png" alt="">
-    </section>
-    <section class="agro">
-        <div class="agro-div-conteudo">
-            <h2 class="agro-titulo">Como funciona?</h2>
-            
-            <p class="agro-texto-um">1. A Estrutura do Chiqueiro
-O chiqueiro é construído de forma suspensa ou bem na margem do tanque (açude). O piso tem uma inclinação ou frestas estratégicas para que a limpeza e os dejetos sejam direcionados direto para a água.</p>
-            <p class="agro-texto-dois">2. Dejetos que Viram Alimento (De forma indireta)
-Existe um mito de que os peixes comem as fezes do porco diretamente. Na verdade, a mágica da biologia funciona assim:
+    </header>
 
-Fertilização: Os dejetos dos porcos caem na água e funcionam como um adubo orgânico rico em nutrientes (nitrogênio e fósforo).
+    <main class="conteudo-principal">
+        <section id="projeto" class="agro-section">
+            <div class="agro-grid">
+                <div class="agro-conteudo">
+                    <span class="tag">Inovação Verde</span>
+                    <h2 class="agro-titulo">Chiqueiro Sustentável</h2>
+                    <p>A engenharia da nossa granja foi projetada para alinhar alta produtividade ao menor impacto ambiental possível. A estrutura principal é construída utilizando materiais sustentáveis, como madeira de reflorestamento tratado e coberturas que priorizam o isolamento térmico passivo.</p>
+                    <p>Para garantir a nossa autossuficiência, o telhado conta com um sistema de painéis solares fotovoltaicos, responsáveis por gerar toda a energia limpa necessária para o funcionamento das bombas de água, iluminação e automação do trato.</p>
+                    
+                    <div class="beneficios-rapidos">
+                        <div class="beneficio-item"><strong>Higiene:</strong> Piso ripado evita contato com dejetos.</div>
+                        <div class="beneficio-item"><strong>Economia:</strong> Limpeza rápida com uso mínimo de água.</div>
+                        <div class="beneficio-item"><strong>Eficiência:</strong> Fluxo contínuo de nutrientes subterrâneos.</div>
+                    </div>
+                </div>
+                <div class="agro-imagem-wrapper">
+                    <img class="agro-imagem" src="VISUAL/imagens/chiqueiro.png" alt="Ilustração do Chiqueiro Sustentável">
+                </div>
+            </div>
+        </section>
 
-Produção de Plâncton: Esse "adubo" estimula o crescimento rápido de algas microscópicas e pequenos organismos na água (o chamado plâncton).
+        <section id="funcionamento" class="agro-section alt-bg">
+            <div class="agro-grid invertido">
+                <div class="agro-conteudo">
+                    <span class="tag">Ecossistema</span>
+                    <h2 class="agro-titulo">Como funciona o ciclo?</h2>
+                    
+                    <ol class="lista-passos">
+                        <li>
+                            <strong>A Estrutura do Chiqueiro:</strong>
+                            <p>Construído de forma suspensa na margem do tanque. O piso possui frestas estratégicas para direcionar os dejetos direto para a água de forma controlada.</p>
+                        </li>
+                        <li>
+                            <strong>Dejetos que viram Alimento:</strong>
+                            <p>Os dejetos funcionam como adubo orgânico rico em nitrogênio e fósforo. Isso estimula o crescimento do <em>plâncton</em> (algas microscópicas), que serve como um banquete natural para peixes filtradores como a tilápia.</p>
+                        </li>
+                        <li>
+                            <strong>Termorregulação e Bem-estar:</strong>
+                            <p>Uma rampa dá acesso direto a uma área da água. Os porcos se refrescam para baixar a temperatura corporal, reduzindo drasticamente o estresse térmico.</p>
+                        </li>
+                    </ol>
 
-O Banquete: Peixes filtradores e onívoros, como a tilápia e a carpa, adoram comer esse plâncton. Ou seja: o porco fertiliza a água, a água cria o plâncton, e o peixe se alimenta muito bem gastando quase nada de ração.</p>
-            <p class="agro-texto-tres">3. Spa e Termorregulação dos Porcos
-Como os porcos quase não têm glândulas sudoríparas (eles não conseguem suar para aliviar o calor), a temperatura do ambiente é um desafio.
+                    <blockquote class="nota-produtor">
+                        <strong>Nota do Produtor:</strong> Esse sistema exige controle rígido. O equilíbrio da quantidade de animais evita a sobrecarga de nutrientes e a falta de oxigênio na água.
+                    </blockquote>
+                </div>
+                <div class="agro-imagem-wrapper">
+                    <img class="agro-imagem" src="VISUAL/imagens/QUADRO INF.png" alt="Infográfico do Funcionamento">
+                </div>
+            </div>
+        </section>
 
-No projeto, deixamos uma rampa de acesso a uma parte da água.
+        <section id="vantagens" class="agro-section">
+            <div class="container-central">
+                <div class="alinhamento-centro">
+                    <span class="tag">Resultados</span>
+                    <h2 class="agro-titulo">Quais as reais vantagens?</h2>
+                    <p class="subtitulo">A economia circular traz benefícios reais para o bolso do produtor e para o planeta.</p>
+                </div>
 
-Os porcos entram, se molham para baixar a temperatura corporal (regulação térmica) e voltam para a área seca quando querem. Isso diminui o estresse do animal e melhora o bem-estar dele.</p>
-            <p class="agro-texto-quatro">Nota do Produtor: Esse sistema exige um controle rígido de manejo. Se houver porcos demais para o tamanho do tanque, a água fica sobrecarregada, falta oxigênio e os peixes podem morrer. O segredo aqui é o equilíbrio perfeito da quantidade de animais!</p>
-        </div>
-        <img class="agro-imagem" src="VISUAL/imagens/QUADRO INF.png" alt="">
-    </section>
-    <section class="agro">
-        <div class="agro-div-conteudo">
-            <h2 class="agro-titulo">E quais as vantagens?</h2>
-            <p class="agro-texto-um">
-Conversa com o Gemini
-ola, gemini oi gemini, voce é um produtor rural no qual voce esta fazendo um chiqueiro sustentavel sobre agua para que as fezes dos porcos alimentem os peixes e uma parte do chiqueiro com acesso a agua para a regulaçao termica dos porcos explique como o sistem funciona de forma resumida
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icone">💰</div>
+                        <h3>Economia com Ração</h3>
+                        <p>Como os dejetos estimulam o plâncton, os peixes têm alimento natural constante. A necessidade de ração comercial despenca.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icone">📈</div>
+                        <h3>Dupla Fonte de Renda</h3>
+                        <p>Produção diversificada de carne de porco e peixe no mesmo espaço, blindando o faturamento contra oscilações do mercado.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icone">🌱</div>
+                        <h3>Solução Ecológica</h3>
+                        <p>O esterco líquido, que seria um passivo ambiental perigoso, vira um recurso valioso para o ecossistema do tanque.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icone">🐖</div>
+                        <h3>Animais Mais Saudáveis</h3>
+                        <p>Sem estresse térmico, os porcos se alimentam melhor, ficam relaxados e ganham peso de forma muito mais eficiente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-Opa, tudo certo por aí? Olha, esse sistema que a gente montou aqui no sítio é o que chamamos de sistema integrado porco-peixe. É um exemplo de economia circular onde o ciclo de um bicho ajuda o do outro.
+        <section id="equipe" class="agro-section alt-bg">
+            <div class="container-central">
+                <div class="alinhamento-centro">
+                    <h2 class="agro-titulo">Quem são nossos estudantes?</h2>
+                </div>
+                <div class="estudante-todos">
+                    <div class="estudante-card">
+                        <div class="avatar-container">
+                            <img class="estudante-imagem" src="Marcelo.jpeg" alt="Foto do Marcelo">
+                        </div>
+                        <h3 class="estudante-nome">Marcelo Paludetto</h3>
+                        <p class="estudante-cargo">Desenvolvedor</p>
+                        <div class="redes-sociais">
+                            <a href="https://github.com/marcelopaludetto" target="_blank" class="icone-social"><img src="github.png" alt="Github"></a>
+                            <a href="https://instagram.com/marcelopaludetto" target="_blank" class="icone-social"><img src="instagram.png" alt="Instagram"></a>
+                        </div>
+                    </div>
 
-Vou te explicar de forma resumida como essa engrenagem funciona:
+                    <div class="estudante-card">
+                        <div class="avatar-container">
+                            <img class="estudante-imagem" src="a.jpeg" alt="Foto do Integrante 2">
+                        </div>
+                        <h3 class="estudante-nome">Segundo Integrante</h3>
+                        <p class="estudante-cargo">Desenvolvedor</p>
+                        <div class="redes-sociais">
+                            <a href="#" target="_blank" class="icone-social"><img src="github.png" alt="Github"></a>
+                            <a href="#" target="_blank" class="icone-social"><img src="instagram.png" alt="Instagram"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-1. A Estrutura do Chiqueiro
-O chiqueiro é construído de forma suspensa ou bem na margem do tanque (açude). O piso tem uma inclinação ou frestas estratégicas para que a limpeza e os dejetos sejam direcionados direto para a água.
-
-2. Dejetos que Viram Alimento (De forma indireta)
-Existe um mito de que os peixes comem as fezes do porco diretamente. Na verdade, a mágica da biologia funciona assim:
-
-Fertilização: Os dejetos dos porcos caem na água e funcionam como um adubo orgânico rico em nutrientes (nitrogênio e fósforo).
-
-Produção de Plâncton: Esse "adubo" estimula o crescimento rápido de algas microscópicas e pequenos organismos na água (o chamado plâncton).
-
-O Banquete: Peixes filtradores e onívoros, como a tilápia e a carpa, adoram comer esse plâncton. Ou seja: o porco fertiliza a água, a água cria o plâncton, e o peixe se alimenta muito bem gastando quase nada de ração.
-
-3. Spa e Termorregulação dos Porcos
-Como os porcos quase não têm glândulas sudoríparas (eles não conseguem suar para aliviar o calor), a temperatura do ambiente é um desafio.
-
-No projeto, deixamos uma rampa de acesso a uma parte da água.
-
-Os porcos entram, se molham para baixar a temperatura corporal (regulação térmica) e voltam para a área seca quando querem. Isso diminui o estresse do animal e melhora o bem-estar dele.
-
-Nota do Produtor: Esse sistema exige um controle rígido de manejo. Se houver porcos demais para o tamanho do tanque, a água fica sobrecarregada, falta oxigênio e os peixes podem morrer. O segredo aqui é o equilíbrio perfeito da quantidade de animais!
-
-e me explique qual a vantagem desse manejo
-
-Rapaz, as vantagens são muitas! Esse tipo de manejo é o verdadeiro "ganha-ganha" da roça, porque a gente consegue otimizar tudo.
-
-Olha só os principais pontos positivos desse sistema:
-
-1. Economia Drástica com Ração
-O bolso do produtor agradece. Como os dejetos dos porcos estimulam a produção de plâncton, os peixes encontram um banquete natural na água o dia todo. Com isso, a necessidade de comprar ração comercial para os peixes cai drasticamente, reduzindo o custo de produção do tanque.</p>
-            <p class="agro-texto-dois">2. Duas Fontes de Renda no Mesmo Espaço
-Em vez de usar a terra só para o chiqueiro, o produtor passa a ter duas atividades comerciais no mesmo espaço: a carne de porco e o peixe. Isso diversifica a produção e garante que, se o preço do porco estiver baixo no mercado, o peixe ajuda a salvar o faturamento do mês.</p>
-            <p class="agro-texto-tres">3. Solução Ecológica para os Dejetos
-Quem cria porco sabe que o manejo das fezes e da urina (o esterco líquido) é um baita desafio ambiental que pode poluir o solo e os rios se feito de forma errada. Nesse sistema integrado, o que seria um poluente perigoso vira um recurso valioso para o ecossistema do tanque. É a economia circular na prática.</p>
-            <p class="agro-texto-quatro">4. Porcos Mais Saudáveis (e que Crescem Mais)
-O acesso à água para regulação térmica faz milagres pelo bem-estar dos porcos. Um porco com calor fica estressado, come menos e demora mais para engordar. Com a rampinha para se refrescarem, eles ficam relaxados, se alimentam melhor e ganham peso de forma mais eficiente e saudável.</p>
-            <p class="agro-texto-cinco">Resumo da ópera: Você gasta menos com insumos, resolve o problema do lixo ecológico, melhora a vida do animal e ainda dobra as suas chances de lucro.</p>
-        </div>
-        <img class="agro-imagem" src="VISUAL/imagens/a_pp-removebg-preview.png" alt="">
-    </section>
-    <section class="estudante">
-        <h2 class="estudante-titulo">Quem são nossos estudantes?</h2>
-        <div class="estudante-todos">
-       
-        <div class="estudante-div">
-            <img class="estudante-imagem" src="Marcelo.jpeg" alt="foto do marcelo">
-            <h3 class="estudante-nome">Marcelo</h3>
-            <a href="https://github.com/marcelopaludetto"><img class="estudante-icone" src="github.png" alt="icone github"></a>
-            <a href="https://instagram.com/marcelopaludetto"><img class="estudante-icone" src="instagram.png" alt="icone instagram"></a>
-        </div>
-        <div class="estudante-div">
-            <img class="estudante-imagem" src="a.jpeg" alt="foto do ">
-            <h3 class="estudante-nome">Marcelo</h3>
-            <a href="https://github.com/marcelopaludetto"><img class="estudante-icone" src="github.png" alt="icone github"></a>
-            <a href="https://instagram.com/marcelopaludetto"><img class="estudante-icone" src="instagram.png" alt="icone instagram"></a>
-        </div>
-        
-    </div>
-    </section>
     <footer class="rodape">
-        <img class="rodape-imagem"src="logo.png" alt="logo ">
+        <p>&copy; 2026 EcoAgro - Projeto de Sustentabilidade Escolar</p>
     </footer>
-     <script src="main.js"></script>
+
+    <script src="main.js"></script>
 </body>
 </html>

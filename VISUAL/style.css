@@ -510,3 +510,14 @@ body.alto-contraste .tag {
     background-color: #ffffff !important;
     color: #000000 !important;
 }
+/* Efeito de rotação do botão de acessibilidade */
+.btn-acessibilidade {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.3s ease;
+}
+
+.rotacao-botao {
+    transform: rotate(45deg);
+}
